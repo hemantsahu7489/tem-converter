@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .result {
+      background-color: #f4f4f4;
+      padding: 10px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      background-color: #4caf50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Temperature Converter</h1>
+  <div class="container">
+    <div class="input-group">
+      <label>Temperature (Celsius)</label>
+      <input id="celsiusInput" type="number" placeholder="Enter temperature in Celsius">
+    </div>
+    <button class="btn" onclick="convertToCelsius()">Convert to Fahrenheit</button>
+    <button class="btn" onclick="convertToFahrenheit()">Convert to Celsius</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function convertToCelsius() {
+      var celsius = parseFloat(document.getElementById('celsiusInput').value);
+      var fahrenheit = (celsius * 9 / 5) + 32;
+      document.getElementById('result').innerHTML = celsius + " Celsius = " + fahrenheit + " Fahrenheit";
+    }
+
+    function convertToFahrenheit() {
+      var fahrenheit = parseFloat(document.getElementById('celsiusInput').value);
+      var celsius = (fahrenheit - 32) * 5 / 9;
+      document.getElementById('result').innerHTML = fahrenheit + " Fahrenheit = " + celsius + " Celsius";
+    }
+  </script>
+</body>
+</html>
